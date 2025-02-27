@@ -18,7 +18,7 @@ class person {
       return;
     }
     this.name = name;
-    this.age = +age;
+    this.age = age;
     this.country = country;
   }
   displayDetails() {
