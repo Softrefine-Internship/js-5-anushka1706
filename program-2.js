@@ -21,7 +21,7 @@ class rectangle {
   }
   calArea() {
     if (!this.height || !this.width) return console.log("invalid inputs");
-    else console.log(`Area is : ${this.height + this.width}`);
+    else console.log(`Area is : ${this.height * this.width}`);
   }
 }
 const rect1 = new rectangle(10, 5);
