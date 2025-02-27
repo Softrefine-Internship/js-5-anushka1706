@@ -23,6 +23,8 @@ class BankAccount {
     else console.log("insufficent balance");
   }
   checkBalance() {
+    if(!this.#accNumber || !this.#balance) return console.log('obj not created')
+      else
     console.log(`Available balance : Rs ${this.#balance}`);
   }
 }
