@@ -17,6 +17,7 @@ class person {
       console.log("Invalid country. It must be a non-empty string.");
       return;
     }
+    else
     this.name = name;
     this.age = age;
     this.country = country;
