@@ -64,5 +64,5 @@ class Product {
       );
     }
   }  
-const product = new PersonalCareProduct('101', "hair dryer", 500, 5);
+const product = new PersonalCareProduct(101, "hair dryer", 500, 5);
 product.calculateTotalPrice(10);

@@ -8,6 +8,7 @@ class Bank {
       console.log("Invalid bank name.");
       return;
     }
+    else
     this.name = bankName.trim();
     this.branches = [];
   }
