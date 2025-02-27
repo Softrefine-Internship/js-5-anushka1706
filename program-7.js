@@ -19,19 +19,23 @@ class Book {
     this.year = year.trim();
   }
   displayDetails() {
-    console.log(
-      `${this.title} by ${this.author} published in the year ${this.year}`
-    );
+    if (!this.title || !this.author || !this.year)
+      return console.log("object not created");
+    else
+      console.log(
+        `${this.title} by ${this.author} published in the year ${this.year}`
+      );
   }
 }
 class Ebook extends Book {
   constructor(title, author, year, price) {
     super(title, author, year);
-    this.price = +price.trim();
+    if (!this.price) return console.log("invalid input");
+    else this.price = price.trim();
   }
   displayDetails() {
     if (!this.title || !this.author || !this.year || !this.price)
-      return console.log("invalid inputs");
+      return console.log("object not created");
     else
       console.log(
         `${this.title} by ${this.author} published in the year ${this.year} costs Rs.${this.price}`
