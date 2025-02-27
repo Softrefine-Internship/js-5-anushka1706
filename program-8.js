@@ -22,6 +22,8 @@ class Animal {
 class Dog extends Animal {
   constructor(species, sound, color) {
     super(species, sound);
+    if(typeof color !== 'string' || color.trim() == '') return console.log('invalid color input')
+      else
     this.color = color.trim();
   }
   makeSound() {
@@ -33,7 +35,7 @@ class Dog extends Animal {
       );
   }
 }
-const dog = new Dog(5, " ", "black  ");
+const dog = new Dog(5, " ", " black ");
 const dog2 = new Dog("dog", "      bhaw bhaw     ", " black  ");
 dog.makeSound();
 dog2.makeSound();
