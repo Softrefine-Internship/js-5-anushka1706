@@ -23,19 +23,35 @@ class BankAccount {
     else {
       this.#balance -= amount;
       acc.#balance += amount;
+      console.log(
+        `Transfered amount ${amount} from  ${this.accHolder} ${
+          this.#accNum
+        } TO ${acc.accHolder} ${acc.#accNum}`
+      );
     }
   }
   deposit(amount) {
     if (!this.#balance)
       return console.log("invalid balance amount in object creation");
-    else if (amount > 0) this.#balance += amount;
-    else return console.log("enter valid amount");
+    else if (amount > 0) {
+      this.#balance += amount;
+      console.log(
+        `Deposited amount ${amount} TO your  account : ${this.accHolder} ${
+          this.#accNum
+        }`
+      );
+    } else return console.log("enter valid amount");
   }
   withdraw(amount) {
     if (!this.#balance)
       return console.log("invalid balance amount in object creation");
-    else if (this.#balance > amount && amount > 0) this.#balance -= amount;
-    else return console.log("enter valid amount");
+    else if (this.#balance > amount && amount > 0) {
+      this.#balance -= amount;
+      console.log(
+        `Withdrawed amount ${amount} FROM your account : ${this.accHolder} ${
+          this.#accNum
+        }`)
+    } else return console.log("enter valid amount");
   }
   checkBalance() {
     if (!this.#balance)

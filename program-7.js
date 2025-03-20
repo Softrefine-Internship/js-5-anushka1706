@@ -8,15 +8,15 @@ class Book {
     if (
       !title.trim() ||
       !author.trim() ||
-      !year.trim() ||
       typeof title !== "string" ||
       typeof author !== "string" ||
-      typeof year !== "string"
+      typeof year !== "number" ||
+      year > 2025
     )
       return console.log("enter valid value");
     else this.title = title.trim();
     this.author = author.trim();
-    this.year = year.trim();
+    this.year = year;
   }
   displayDetails() {
     if (!this.title || !this.author || !this.year)
@@ -30,8 +30,9 @@ class Book {
 class Ebook extends Book {
   constructor(title, author, year, price) {
     super(title, author, year);
-    if (!this.price) return console.log("invalid input");
-    else this.price = price.trim();
+    if (typeof price !== "number" && price <= 0)
+      return console.log("enter number");
+    else this.price = price;
   }
   displayDetails() {
     if (!this.title || !this.author || !this.year || !this.price)
@@ -42,7 +43,7 @@ class Ebook extends Book {
       );
   }
 }
-const book = new Ebook("The Alchemist ", "  Paulo Coelho  ", " 1988", "400");
-const book2 = new Ebook(" ", "  Paulo Coelho  ", " 1988", "400");
+const book = new Ebook("The Alchemist ", "  Paulo Coelho  ", 1988, 400);
+const book2 = new Ebook(" ", "  Paulo Coelho  ", 1988, 400);
 book.displayDetails();
 book2.displayDetails();

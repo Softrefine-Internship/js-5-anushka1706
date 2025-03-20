@@ -4,15 +4,17 @@
 
 class University {
   constructor(name) {
-    if (typeof name !== "string" || name.trim() === "") return console.log("invalid input");
+    if (typeof name !== "string" || name.trim() === "")
+      return console.log("invalid input");
     else this.name = name.trim();
     this.department = [];
   }
   addDepartment(name) {
     if (!this.name) return console.log("invalid name");
-    else if (!this.department.includes(name))
+    else if (!this.department.includes(name)) {
       this.department.push(name.toLowerCase());
-    else console.log(`this departmet already exists`);
+      console.log(`Department : '${name.toUpperCase()}' Added`);
+    } else console.log(`this departmet already exists`);
   }
   removeDepartment(name) {
     const lowerCase = name.toLowerCase();
@@ -21,6 +23,7 @@ class University {
       let index = this.department.indexOf(lowerCase);
       if (index !== -1) {
         this.department.splice(index, 1);
+        console.log(`Department : '${name.toUpperCase()}' Removed`);
       }
     } else console.log(`enter valid name`);
   }
@@ -28,11 +31,11 @@ class University {
     if (!this.name) return console.log("invalid name");
     else
       this.department.forEach((e) => {
-        console.log(e);
+        console.log(`DEpartment : ${e}`);
       });
   }
 }
-const uni = new University("");
+const uni = new University("Adani University");
 uni.addDepartment("ICT");
 uni.addDepartment("civil");
 uni.addDepartment("electronic");

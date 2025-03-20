@@ -58,11 +58,12 @@ class Product {
         console.log("Enter a valid quantity.");
         return;
       }
-  
       console.log(
         `Total price for ${this.name} is Rs.${this.price * qty} with a warranty period of ${this.warranty} months.`
       );
     }
   }  
-const product = new PersonalCareProduct(101, "hair dryer", 500, 5);
-product.calculateTotalPrice(10);
+// const product = new PersonalCareProduct(101, "hair dryer", 1500, 5);
+// product.calculateTotalPrice(2);
+const hairDryer = new PersonalCareProduct(202, "Hair Dryer", 1500, 24);
+hairDryer.calculateTotalPrice(2);

@@ -9,13 +9,15 @@
 class Employee {
   #salary;
   constructor(name, salary) {
-    if (typeof name !== "string" || !name.trim())
-      return console.log("enter valid name");
+    if (typeof name !== "string" || !name.trim() || salary <= 0)
+      return console.log("enter valid name or salary");
     else this.name = name;
     this.#salary = +salary;
   }
   annualSalary() {
-    return this.#salary * 12;
+    if (!this.getSalary() && !this.name)
+      return console.log("object was not created enter valid values");
+    return console.log(this.#salary * 12);
   }
   getSalary() {
     return this.#salary;
@@ -39,3 +41,5 @@ const manager1 = new Manager("karen", 50000, "CA", 20000);
 const manager2 = new Manager("jessica", 55000, "CA", 25000);
 manager1.annualSalary();
 manager2.annualSalary();
+const emp4 = new Employee("Jane Doe", -3000);
+emp4.annualSalary();
